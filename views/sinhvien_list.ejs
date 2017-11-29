@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sinhvien</title>
+    <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    Danh sách sinh vien
+    <table width="500" border="1 solid black">
+      <tr>
+        <td>ID</td>
+        <td>HoTen</td>
+        <td>Email</td>
+        <td><a href="../sinhvien/add">Them</a></td>
+      </tr>
+
+      <% danhsach.rows.forEach(function(sv){ %>
+      <tr>
+        <td><%= sv.id %></td>
+        <td><%= sv.hoten %></td>
+        <td><%= sv.email %></td>
+        <td>
+          <a href="../sinhvien/sua/<%= sv.id %>">Sua</a> -
+          <a href="../sinhvien/xoa/<%= sv.id %>">Xoa</a>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
